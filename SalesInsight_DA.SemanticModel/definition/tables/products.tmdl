@@ -1,0 +1,35 @@
+table products
+	lineageTag: d94c59c2-eb8d-46bb-83a8-7bc975dabec6
+
+	column product_code
+		dataType: string
+		lineageTag: 9a1cee59-6d05-40fe-9fb9-7e6764eda5b2
+		summarizeBy: none
+		sourceColumn: product_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column product_type
+		dataType: string
+		lineageTag: bfceef3b-3f99-424d-8bbf-bca076997fec
+		summarizeBy: none
+		sourceColumn: product_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition products = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("DESKTOP-D8BRM8F", "sales"),
+				    dbo_products = Source{[Schema="dbo",Item="products"]}[Data],
+				    #"Replaced Value" = Table.ReplaceValue(dbo_products,"\r"," ",Replacer.ReplaceText,{"product_type"}),
+				    #"Trimmed Text" = Table.TransformColumns(#"Replaced Value",{{"product_type", Text.Trim, type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Trimmed Text", each true)
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

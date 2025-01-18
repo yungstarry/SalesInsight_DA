@@ -1,0 +1,14 @@
+expression date =
+		let
+		    Source = Sql.Database("DESKTOP-D8BRM8F", "sales"),
+		    dbo_date = Source{[Schema="dbo",Item="date"]}[Data],
+		    #"Replaced Value" = Table.ReplaceValue(dbo_date,"\r"," ",Replacer.ReplaceText,{"date_yy_mmm"}),
+		    #"Filtered Rows" = Table.SelectRows(#"Replaced Value", each true)
+		in
+		    #"Filtered Rows"
+	lineageTag: 4163032d-c0c0-4663-93bd-b452d739d797
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

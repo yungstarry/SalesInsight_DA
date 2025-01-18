@@ -1,0 +1,40 @@
+table customers
+	lineageTag: 73e24b6f-3aeb-4474-a831-f7194a37f7b6
+
+	column customer_code
+		dataType: string
+		lineageTag: 80692c21-a7b4-424c-bc48-6bee925d81af
+		summarizeBy: none
+		sourceColumn: customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_name
+		dataType: string
+		lineageTag: 25b7796e-4a34-45fc-bb03-630d42333f79
+		summarizeBy: none
+		sourceColumn: customer_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_type
+		dataType: string
+		lineageTag: 8ae9b602-3832-4096-bc0e-e5f24b27c429
+		summarizeBy: none
+		sourceColumn: customer_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition customers = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("DESKTOP-D8BRM8F", "sales"),
+				    dbo_customers = Source{[Schema="dbo",Item="customers"]}[Data]
+				in
+				    dbo_customers
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

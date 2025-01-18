@@ -1,0 +1,41 @@
+table markets
+	lineageTag: fb386c56-f356-4535-8586-dfc5cf47b793
+
+	column markets_code
+		dataType: string
+		lineageTag: bf513b18-7a7a-4047-974a-a01683b15609
+		summarizeBy: none
+		sourceColumn: markets_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column markets_name
+		dataType: string
+		lineageTag: d914b656-9f70-452d-baa3-8b2e659eb010
+		summarizeBy: none
+		sourceColumn: markets_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column zone
+		dataType: string
+		lineageTag: b02e0718-f1cd-4b08-8398-b25647e838c2
+		summarizeBy: none
+		sourceColumn: zone
+
+		annotation SummarizationSetBy = Automatic
+
+	partition markets = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("DESKTOP-D8BRM8F", "sales"),
+				    dbo_markets = Source{[Schema="dbo",Item="markets"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dbo_markets, each ([markets_name] <> "New York" and [markets_name] <> "Paris"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

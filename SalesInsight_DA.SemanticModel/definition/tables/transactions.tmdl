@@ -1,0 +1,132 @@
+table transactions
+	lineageTag: a9513303-2039-4878-bfa6-e6b4e6f2047a
+
+	column product_code
+		dataType: string
+		lineageTag: 02a4e05d-f97f-480a-9d1b-12b866d17949
+		summarizeBy: none
+		sourceColumn: product_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_code
+		dataType: string
+		lineageTag: efd357c5-adbf-4d3c-8c8b-c6779f55890f
+		summarizeBy: none
+		sourceColumn: customer_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column market_code
+		dataType: string
+		lineageTag: 7cedbb39-317f-49a6-882c-861ca50ab668
+		summarizeBy: none
+		sourceColumn: market_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column order_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 7402ba69-5f26-4dfd-b471-00dc793f510a
+		summarizeBy: none
+		sourceColumn: order_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column sales_qty
+		dataType: int64
+		formatString: 0
+		lineageTag: 180f99a7-22a0-4057-81bb-c315f3f85918
+		summarizeBy: sum
+		sourceColumn: sales_qty
+
+		annotation SummarizationSetBy = Automatic
+
+	column sales_amount
+		dataType: double
+		lineageTag: e9b54301-1fb7-4208-a2d7-d69c37e4b58e
+		summarizeBy: sum
+		sourceColumn: sales_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column currency
+		dataType: string
+		lineageTag: 704eaa5d-1134-469b-a312-0c95e549b66e
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column profit_margin_percentage
+		dataType: double
+		lineageTag: 29c2dacf-12fd-4b41-8146-4c081ad4dcf4
+		summarizeBy: sum
+		sourceColumn: profit_margin_percentage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column profit_margin
+		dataType: double
+		lineageTag: 55d9875a-d412-4945-9545-fc816706864f
+		summarizeBy: sum
+		sourceColumn: profit_margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cost_price
+		dataType: double
+		lineageTag: 8d77d412-3002-4fd0-9420-fed5001af381
+		summarizeBy: sum
+		sourceColumn: cost_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column norm_sales_amount
+		dataType: double
+		lineageTag: 0d95dcc9-8954-4b6d-a2fa-b10d3ff20ff4
+		summarizeBy: sum
+		sourceColumn: norm_sales_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column norm_currency
+		dataType: string
+		lineageTag: d0850551-bf57-462a-b6da-635a3ea9be61
+		summarizeBy: none
+		sourceColumn: norm_currency
+
+		annotation SummarizationSetBy = Automatic
+
+	partition transactions = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("DESKTOP-D8BRM8F", "sales"),
+				    dbo_transactions = Source{[Schema="dbo",Item="transactions"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dbo_transactions, each true),
+				    #"Added Conditional Column" = Table.AddColumn(#"Filtered Rows", "norm_sales_amount", each if [currency] = "USD" then [sales_amount] else [sales_amount]/75),
+				    #"Filtered Rows1" = Table.SelectRows(#"Added Conditional Column", each true),
+				    #"Added Conditional Column1" = Table.AddColumn(#"Filtered Rows1", "norm_currency", each if [currency] = "INR" then "USD" else null),
+				    #"Filtered Rows2" = Table.SelectRows(#"Added Conditional Column1", each true),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows2",{{"norm_currency", type text}, {"norm_sales_amount", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

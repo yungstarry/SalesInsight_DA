@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "SalesInsight_DA"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "cf7c07aa-9010-4202-8205-b34f8b4e6710"
+  }
+}
