@@ -10,7 +10,7 @@ table Dates
 
 		variation Variation
 			isDefault
-			relationship: 3b216aac-a2d0-4ae8-88f3-43766c1a04c6
+			relationship: 1b7f5691-08f7-434e-8fa1-b26a2ad048a2
 			defaultHierarchy: LocalDateTable_1447f6fa-57ce-4adf-9369-5712ca7915a6.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
@@ -139,6 +139,15 @@ table Dates
 
 		annotation SummarizationSetBy = Automatic
 
+	column MonthYear
+		lineageTag: fd6b0ab3-a8ee-41b7-a12b-eb74b24217d1
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthYear]
+		sortByColumn: Monthnumber
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Dates = calculated
 		mode: import
 		source = ```
@@ -150,6 +159,7 @@ table Dates
 				    "Monthnumber", FORMAT ( [Date], "MM" ),
 				    "YearMonthnumber", FORMAT ( [Date], "YYYY/MM" ),
 				    "YearMonthShort", FORMAT ( [Date], "YYYY/mmm" ),
+				    "MonthYear", FORMAT ( [Date], "mmm yy" ),
 				    "MonthNameShort", FORMAT ( [Date], "mmm" ),
 				    "MonthNameLong", FORMAT ( [Date], "mmmm" ),
 				    "Day", DAY([Date]),
