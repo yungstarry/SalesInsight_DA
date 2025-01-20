@@ -2,9 +2,8 @@ table _Measures
 	lineageTag: d6228b0f-5278-434c-9881-7d03e3958f78
 
 	measure Revenue = SUM(transactions[norm_sales_amount])
+		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: 91dd52e9-f77c-498e-ae7a-e43937129174
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Sales Qty' = SUM(transactions[sales_qty])
 		formatString: 0
@@ -19,11 +18,11 @@ table _Measures
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: fc06660b-3159-4e1a-ba86-40ac250562a8
 
-	measure 'Profit Margin contribution %' = DIVIDE([Total Profit Margin],CALCULATE([Total Profit Margin], ALL(products), ALL(markets)))
+	measure 'Profit Margin contribution %' = DIVIDE([Total Profit Margin],CALCULATE([Total Profit Margin], ALL(products), ALL(customers),ALL(markets)))
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 6d7df818-ef3e-4707-8fc4-cd62f7a97e1f
 
-	measure 'Revenue contribution %' = DIVIDE([Revenue],CALCULATE([Revenue], ALL(products), ALL(markets)))
+	measure 'Revenue contribution %' = DIVIDE([Revenue],CALCULATE([Revenue],  ALL(products), ALL(customers), ALL(markets)))
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: f8c8ad25-bccd-4fb0-9a8d-1d1a948c1239
 
