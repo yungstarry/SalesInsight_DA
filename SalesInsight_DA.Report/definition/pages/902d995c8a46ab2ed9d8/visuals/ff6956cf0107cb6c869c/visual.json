@@ -1,0 +1,98 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "ff6956cf0107cb6c869c",
+  "position": {
+    "x": 10.138076127503846,
+    "y": 59.380160175379665,
+    "z": 1,
+    "height": 647.38857557060271,
+    "width": 612.62945741916087,
+    "tabOrder": 1
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "products"
+                    }
+                  },
+                  "Property": "product_code"
+                }
+              },
+              "queryRef": "products.product_code",
+              "nativeQueryRef": "product_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "transactions"
+                    }
+                  },
+                  "Property": "product_code"
+                }
+              },
+              "queryRef": "transactions.product_code",
+              "nativeQueryRef": "product_code1"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "products"
+                    }
+                  },
+                  "Property": "product_type"
+                }
+              },
+              "queryRef": "products.product_type",
+              "nativeQueryRef": "product_type"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "161.38488768051303D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "transactions.product_code"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "270.1404826656887D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "products.product_code"
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

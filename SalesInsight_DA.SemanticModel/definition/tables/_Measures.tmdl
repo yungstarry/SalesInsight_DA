@@ -1,30 +1,26 @@
 table _Measures
 	lineageTag: d6228b0f-5278-434c-9881-7d03e3958f78
 
-	measure Revenue = SUM(transactions[norm_sales_amount])
+	measure 'Total Sales Amount' = SUM(transactions[norm_sales_amount])
 		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales
 		lineageTag: 91dd52e9-f77c-498e-ae7a-e43937129174
 
-	measure 'Sales Qty' = SUM(transactions[sales_qty])
+	measure 'Total Sales Quantity' = SUM(transactions[sales_qty])
 		formatString: 0
+		displayFolder: Sales
 		lineageTag: 97ff678b-4ee0-4586-8f3c-0fc2e16a6615
 
-	measure 'Total Profit Margin' = SUM(transactions[profit_margin])
-		lineageTag: f40dca83-3fbb-4488-900d-d0e5d86fbf57
+	measure 'Avg Sales Price' = DIVIDE([Total Sales Amount],[Total Sales Quantity])
+		displayFolder: Sales
+		lineageTag: b5ba8dd2-d4d9-44e0-9a90-c41ac6389445
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Profit Margin %' = DIVIDE([Total Profit Margin],[Revenue],0)
-		formatString: 0.00%;-0.00%;0.00%
-		lineageTag: fc06660b-3159-4e1a-ba86-40ac250562a8
-
-	measure 'Profit Margin contribution %' = DIVIDE([Total Profit Margin],CALCULATE([Total Profit Margin], ALL(products), ALL(customers),ALL(markets)))
-		formatString: 0.00%;-0.00%;0.00%
-		lineageTag: 6d7df818-ef3e-4707-8fc4-cd62f7a97e1f
-
-	measure 'Revenue contribution %' = DIVIDE([Revenue],CALCULATE([Revenue],  ALL(products), ALL(customers), ALL(markets)))
-		formatString: 0.00%;-0.00%;0.00%
-		lineageTag: f8c8ad25-bccd-4fb0-9a8d-1d1a948c1239
+	measure 'YOY Growth Sales' = CALCULATE([Total Sales Amount], SAMEPERIODLASTYEAR(transactions[norm_sales_amount]))
+		formatString: 0
+		displayFolder: Sales
+		lineageTag: 86fb891a-d510-4b01-8f4f-9883a354d5a8
 
 	partition _Measures = m
 		mode: import

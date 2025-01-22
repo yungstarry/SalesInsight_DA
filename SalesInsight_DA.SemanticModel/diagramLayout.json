@@ -4,7 +4,7 @@
     {
       "ordinal": 0,
       "scrollPosition": {
-        "x": 133.78304391117831,
+        "x": 0,
         "y": 0
       },
       "nodes": [
@@ -19,7 +19,7 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 1
         },
         {
           "location": {
@@ -32,12 +32,12 @@
             "height": 152,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 2
         },
         {
           "location": {
             "x": 0,
-            "y": 91.140412819753749
+            "y": 0
           },
           "nodeIndex": "products",
           "nodeLineageTag": "d94c59c2-eb8d-46bb-83a8-7bc975dabec6",
@@ -45,7 +45,7 @@
             "height": 197,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 6
         },
         {
           "location": {
@@ -58,7 +58,7 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 3
         },
         {
           "location": {
@@ -71,7 +71,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 4
         },
         {
           "location": {
@@ -84,11 +84,11 @@
             "height": 104,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 5
         }
       ],
       "name": "All tables",
-      "zoomValue": 100,
+      "zoomValue": 39.0625,
       "pinKeyFieldsToTop": false,
       "showExtraHeaderInfo": false,
       "hideKeyFieldsWhenCollapsed": false,

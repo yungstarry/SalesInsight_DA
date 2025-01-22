@@ -23,7 +23,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Sales Qty"
+                  "Property": "Total Sales Quantity"
                 }
               },
               "queryRef": "_Measures.Sales Qty",
@@ -42,7 +42,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Sales Qty"
+                "Property": "Total Sales Quantity"
               }
             },
             "direction": "Descending"

@@ -12,3 +12,16 @@ expression date =
 
 	annotation PBI_ResultType = Table
 
+expression NewProduct =
+		let
+		    Source = Sql.Database("DESKTOP-D8BRM8F", "sales"),
+		    dbo_NewProduct = Source{[Schema="dbo",Item="NewProduct"]}[Data],
+		    #"Removed Duplicates" = Table.Distinct(dbo_NewProduct)
+		in
+		    #"Removed Duplicates"
+	lineageTag: b8b4e53e-01cc-4583-a4bd-5e06eda63e94
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

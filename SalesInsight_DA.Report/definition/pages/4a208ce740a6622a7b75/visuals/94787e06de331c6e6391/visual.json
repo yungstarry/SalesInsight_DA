@@ -37,7 +37,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Revenue"
+                  "Property": "Total Sales Amount"
                 }
               },
               "queryRef": "_Measures.Revenue",

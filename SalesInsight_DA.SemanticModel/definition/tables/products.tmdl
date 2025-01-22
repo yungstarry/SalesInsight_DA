@@ -25,9 +25,13 @@ table products
 				    dbo_products = Source{[Schema="dbo",Item="products"]}[Data],
 				    #"Replaced Value" = Table.ReplaceValue(dbo_products,"\r"," ",Replacer.ReplaceText,{"product_type"}),
 				    #"Trimmed Text" = Table.TransformColumns(#"Replaced Value",{{"product_type", Text.Trim, type text}}),
-				    #"Filtered Rows" = Table.SelectRows(#"Trimmed Text", each true)
+				    #"Filtered Rows" = Table.SelectRows(#"Trimmed Text", each true),
+				    #"Appended Query" = Table.Combine({#"Filtered Rows", NewProduct}),
+				    #"Filtered Rows1" = Table.SelectRows(#"Appended Query", each true),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Filtered Rows1",null,"Unknown Type",Replacer.ReplaceValue,{"product_type"}),
+				    #"Filtered Rows2" = Table.SelectRows(#"Replaced Value1", each true)
 				in
-				    #"Filtered Rows"
+				    #"Filtered Rows2"
 
 	annotation PBI_NavigationStepName = Navigation
 

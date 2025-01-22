@@ -118,14 +118,15 @@ table transactions
 				    Source = Sql.Database("DESKTOP-D8BRM8F", "sales"),
 				    dbo_transactions = Source{[Schema="dbo",Item="transactions"]}[Data],
 				    #"Filtered Rows" = Table.SelectRows(dbo_transactions, each true),
-				    #"Added Conditional Column" = Table.AddColumn(#"Filtered Rows", "norm_sales_amount", each if [currency] = "USD" then [sales_amount] else [sales_amount]/75),
+				    #"Added Conditional Column" = Table.AddColumn(#"Filtered Rows", "norm_sales_amount", each if [currency] = "USD" then [sales_amount] else [sales_amount]/86.61),
 				    #"Filtered Rows1" = Table.SelectRows(#"Added Conditional Column", each true),
 				    #"Added Conditional Column1" = Table.AddColumn(#"Filtered Rows1", "norm_currency", each if [currency] = "INR" then "USD" else null),
 				    #"Filtered Rows2" = Table.SelectRows(#"Added Conditional Column1", each true),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows2",{{"norm_currency", type text}, {"norm_sales_amount", type number}}),
-				    #"Filtered Rows3" = Table.SelectRows(#"Changed Type", each ([product_code] <> null and [product_code] <> ""))
+				    #"Filtered Rows3" = Table.SelectRows(#"Changed Type", each ([product_code] <> null and [product_code] <> "")),
+				    #"Filtered Rows4" = Table.SelectRows(#"Filtered Rows3", each [product_code] <> null and [product_code] <> "")
 				in
-				    #"Filtered Rows3"
+				    #"Filtered Rows4"
 
 	annotation PBI_NavigationStepName = Navigation
 

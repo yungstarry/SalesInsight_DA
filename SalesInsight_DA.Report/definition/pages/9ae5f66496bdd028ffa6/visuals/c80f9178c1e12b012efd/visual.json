@@ -42,7 +42,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Revenue"
+                  "Property": "Total Sales Amount"
                 }
               },
               "queryRef": "_Measures.Revenue",
@@ -61,7 +61,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Revenue"
+                "Property": "Total Sales Amount"
               }
             },
             "direction": "Descending"
@@ -146,7 +146,7 @@
                                 "Source": "_"
                               }
                             },
-                            "Property": "Revenue"
+                            "Property": "Total Sales Amount"
                           }
                         }
                       }
