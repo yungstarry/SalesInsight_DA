@@ -17,10 +17,61 @@ table _Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'YOY Growth Sales' = CALCULATE([Total Sales Amount], SAMEPERIODLASTYEAR(transactions[norm_sales_amount]))
+	measure 'YOY Sales Growth' = DIVIDE([Total Sales Amount] - [Total Sales SPLY], [Total Sales SPLY], 0)
+		formatString: 0.00
+		displayFolder: YOY Sales
+		lineageTag: 86fb891a-d510-4b01-8f4f-9883a354d5a8
+
+	measure 'Total Sales SPLY' = CALCULATE([Total Sales Amount], SAMEPERIODLASTYEAR(Dates[Date]))
+		displayFolder: YOY Sales
+		lineageTag: 45c914e5-f617-4082-8d58-4a4c5c64dced
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'YOY Sales checkamte' = ```
+			
+			(CALCULATE(SUM(transactions[norm_sales_amount]), SAMEPERIODLASTYEAR(Dates[Date])) - SUM(transactions[norm_sales_amount])) 
+			/ CALCULATE(SUM(transactions[norm_sales_amount]), SAMEPERIODLASTYEAR(Dates[Date]))
+			
+			```
+		displayFolder: YOY Sales
+		lineageTag: e984a201-9661-4fd7-b1dc-18eb9bb1aa53
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Sales PM' = CALCULATE([Total Sales Amount], PARALLELPERIOD(Dates[Date],-1,MONTH))
+		displayFolder: MOM Sales
+		lineageTag: 4f48e471-68e6-4435-bd9b-f4b525cb621c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MOM Sales Growth' = DIVIDE([Total Sales Amount]-[Total Sales PM], [Total Sales PM],0)
+		displayFolder: MOM Sales
+		lineageTag: ba541675-c158-4727-82c6-e659d3185f33
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Profit Margin %' = (SUM(transactions[profit_margin]) / SUM(transactions[norm_sales_amount]))  * 100
+		displayFolder: Sales
+		lineageTag: 59dfbf26-3859-442c-81a7-9621717c0f63
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Sales per Customer' = CALCULATE(SUM(transactions[norm_sales_amount]), ALLEXCEPT(customers,customers[customer_code]))
+		displayFolder: Sales
+		lineageTag: d03b653e-e634-4ae8-8551-f62d3bb63f5e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Customer Sales Rank' = RANKX(ALL(customers[customer_code]),[Total Sales per Customer],,DESC,Dense)
 		formatString: 0
 		displayFolder: Sales
-		lineageTag: 86fb891a-d510-4b01-8f4f-9883a354d5a8
+		lineageTag: 59e11dea-12c4-4fa8-8cbe-47fc2bea7feb
+
+	measure 'Is Top 5 Customer' = IF([Customer Sales Rank] <= 5, TRUE(), FALSE())
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		displayFolder: Sales
+		lineageTag: 08fdd3fa-40b1-4a3a-875a-d74aef01d857
 
 	partition _Measures = m
 		mode: import

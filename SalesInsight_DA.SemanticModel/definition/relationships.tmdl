@@ -6,11 +6,6 @@ relationship bc1c0023-62b1-0d45-30aa-60b6bb1c8944
 	fromColumn: transactions.market_code
 	toColumn: markets.markets_code
 
-relationship 1b7f5691-08f7-434e-8fa1-b26a2ad048a2
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Dates.Date
-	toColumn: LocalDateTable_1447f6fa-57ce-4adf-9369-5712ca7915a6.Date
-
 relationship 0ab56173-5e12-7e47-5b03-8304a20aba72
 	fromColumn: transactions.order_date
 	toColumn: Dates.Date

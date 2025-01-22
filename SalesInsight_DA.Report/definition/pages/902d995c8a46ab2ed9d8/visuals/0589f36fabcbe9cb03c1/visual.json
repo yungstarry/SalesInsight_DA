@@ -1,39 +1,34 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "05cf8847a2800fdc5e43",
+  "name": "0589f36fabcbe9cb03c1",
   "position": {
-    "x": 214.34789526722415,
-    "y": 292.55591110796809,
-    "z": 8,
-    "height": 338.90140197655711,
-    "width": 207.10641231900712,
-    "tabOrder": 8
+    "x": 77.640631097730946,
+    "y": 27.402575681552097,
+    "z": 0,
+    "height": 280.11521807808811,
+    "width": 278.59285276244634,
+    "tabOrder": 0
   },
   "visual": {
-    "visualType": "barChart",
+    "visualType": "tableEx",
     "query": {
       "queryState": {
-        "Category": {
+        "Values": {
           "projections": [
             {
               "field": {
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "markets"
+                      "Entity": "customers"
                     }
                   },
-                  "Property": "markets_name"
+                  "Property": "customer_code"
                 }
               },
-              "queryRef": "markets.markets_name",
-              "nativeQueryRef": "markets_name",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
+              "queryRef": "customers.customer_code",
+              "nativeQueryRef": "customer_code"
+            },
             {
               "field": {
                 "Measure": {
@@ -42,11 +37,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Profit Margin contribution %"
+                  "Property": "Is Top 5 Customer"
                 }
               },
-              "queryRef": "_Measures.Profit Margin contribution %",
-              "nativeQueryRef": "Profit Margin contribution %"
+              "queryRef": "_Measures.Is Top 5 Customer",
+              "nativeQueryRef": "Is Top 5 Customer"
             }
           ]
         }
@@ -61,30 +56,32 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Profit Margin contribution %"
+                "Property": "Is Top 5 Customer"
               }
             },
             "direction": "Descending"
           }
-        ],
-        "isDefaultSort": true
+        ]
       }
     },
-    "objects": {
-      "labels": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "81d0ff306182271daba3",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Is Top 5 Customer"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

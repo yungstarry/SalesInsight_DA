@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "c80f9178c1e12b012efd",
+  "name": "5092b683506590056538",
   "position": {
-    "x": 967.4621218817955,
-    "y": 388.14348602443295,
-    "z": 5000,
-    "height": 331.65991902834008,
-    "width": 312.83206336297576,
-    "tabOrder": 5000
+    "x": 566.00167373052932,
+    "y": 328.40536673595551,
+    "z": 2,
+    "height": 287.35469589396104,
+    "width": 328.40536673595551,
+    "tabOrder": 2
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "products"
+                      "Entity": "customers"
                     }
                   },
-                  "Property": "product_code"
+                  "Property": "customer_code"
                 }
               },
-              "queryRef": "products.product_code",
-              "nativeQueryRef": "product_code",
+              "queryRef": "customers.customer_code",
+              "nativeQueryRef": "customer_code",
               "active": true
             }
           ]
@@ -45,8 +45,8 @@
                   "Property": "Total Sales Amount"
                 }
               },
-              "queryRef": "_Measures.Revenue",
-              "nativeQueryRef": "Revenue"
+              "queryRef": "_Measures.Total Sales Amount",
+              "nativeQueryRef": "Total Sales Amount"
             }
           ]
         }
@@ -70,12 +70,28 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "3ee3e9cb1ca2d456672d",
+        "name": "0ef6fbb68c1e7cc16daa",
+        "ordinal": 0,
         "field": {
           "Column": {
             "Expression": {
@@ -83,22 +99,7 @@
                 "Entity": "customers"
               }
             },
-            "Property": "customer_name"
-          }
-        },
-        "type": "TopN",
-        "howCreated": "User"
-      },
-      {
-        "name": "840d71f9340110cdb514",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "products"
-              }
-            },
-            "Property": "product_code"
+            "Property": "customer_code"
           }
         },
         "type": "TopN",
@@ -113,8 +114,8 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "p",
-                        "Entity": "products",
+                        "Name": "c",
+                        "Entity": "customers",
                         "Type": 0
                       },
                       {
@@ -128,10 +129,10 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "p"
+                              "Source": "c"
                             }
                           },
-                          "Property": "product_code"
+                          "Property": "customer_code"
                         },
                         "Name": "field"
                       }
@@ -151,15 +152,15 @@
                         }
                       }
                     ],
-                    "Top": 5
+                    "Top": 2
                   }
                 }
               },
               "Type": 2
             },
             {
-              "Name": "p",
-              "Entity": "products",
+              "Name": "c",
+              "Entity": "customers",
               "Type": 0
             }
           ],
@@ -172,10 +173,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "p"
+                            "Source": "c"
                           }
                         },
-                        "Property": "product_code"
+                        "Property": "customer_code"
                       }
                     }
                   ],
@@ -189,7 +190,23 @@
             }
           ]
         }
+      },
+      {
+        "name": "a74171eb16ae50935de6",
+        "ordinal": 1,
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "Total Sales Amount"
+          }
+        },
+        "type": "Advanced"
       }
-    ]
+    ],
+    "filterSortOrder": "Custom"
   }
 }

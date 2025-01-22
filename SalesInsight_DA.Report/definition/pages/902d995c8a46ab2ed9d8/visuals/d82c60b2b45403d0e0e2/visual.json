@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "c80f9178c1e12b012efd",
+  "name": "d82c60b2b45403d0e0e2",
   "position": {
-    "x": 967.4621218817955,
-    "y": 388.14348602443295,
-    "z": 5000,
-    "height": 331.65991902834008,
-    "width": 312.83206336297576,
-    "tabOrder": 5000
+    "x": 98.953745516715912,
+    "y": 328.83090817862518,
+    "z": 1,
+    "height": 374.50186764787867,
+    "width": 327.30854286298336,
+    "tabOrder": 1
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "clusteredBarChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "products"
+                      "Entity": "customers"
                     }
                   },
-                  "Property": "product_code"
+                  "Property": "customer_code"
                 }
               },
-              "queryRef": "products.product_code",
-              "nativeQueryRef": "product_code",
+              "queryRef": "customers.customer_code",
+              "nativeQueryRef": "customer_code",
               "active": true
             }
           ]
@@ -42,11 +42,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Sales Amount"
+                  "Property": "Total Sales per Customer"
                 }
               },
-              "queryRef": "_Measures.Revenue",
-              "nativeQueryRef": "Revenue"
+              "queryRef": "_Measures.Total Sales per Customer",
+              "nativeQueryRef": "Total Sales per Customer"
             }
           ]
         }
@@ -61,7 +61,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Total Sales Amount"
+                "Property": "Total Sales per Customer"
               }
             },
             "direction": "Descending"
@@ -70,12 +70,27 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "3ee3e9cb1ca2d456672d",
+        "name": "412770add88a9e718dd2",
         "field": {
           "Column": {
             "Expression": {
@@ -83,22 +98,7 @@
                 "Entity": "customers"
               }
             },
-            "Property": "customer_name"
-          }
-        },
-        "type": "TopN",
-        "howCreated": "User"
-      },
-      {
-        "name": "840d71f9340110cdb514",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "products"
-              }
-            },
-            "Property": "product_code"
+            "Property": "customer_code"
           }
         },
         "type": "TopN",
@@ -113,8 +113,8 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "p",
-                        "Entity": "products",
+                        "Name": "c",
+                        "Entity": "customers",
                         "Type": 0
                       },
                       {
@@ -128,10 +128,10 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "p"
+                              "Source": "c"
                             }
                           },
-                          "Property": "product_code"
+                          "Property": "customer_code"
                         },
                         "Name": "field"
                       }
@@ -146,20 +146,20 @@
                                 "Source": "_"
                               }
                             },
-                            "Property": "Total Sales Amount"
+                            "Property": "Is Top 5 Customer"
                           }
                         }
                       }
                     ],
-                    "Top": 5
+                    "Top": 2
                   }
                 }
               },
               "Type": 2
             },
             {
-              "Name": "p",
-              "Entity": "products",
+              "Name": "c",
+              "Entity": "customers",
               "Type": 0
             }
           ],
@@ -172,10 +172,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "p"
+                            "Source": "c"
                           }
                         },
-                        "Property": "product_code"
+                        "Property": "customer_code"
                       }
                     }
                   ],

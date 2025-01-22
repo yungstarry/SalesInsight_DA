@@ -1,17 +1,14 @@
 table Dates
 	lineageTag: 57ff3cf2-6b67-4084-b6d6-469f0423df5b
+	dataCategory: Time
 
 	column Date
+		isKey
 		formatString: General Date
 		lineageTag: eacd46f0-9803-4b1e-a7b3-fbbb7c44012a
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [Date]
-
-		variation Variation
-			isDefault
-			relationship: 1b7f5691-08f7-434e-8fa1-b26a2ad048a2
-			defaultHierarchy: LocalDateTable_1447f6fa-57ce-4adf-9369-5712ca7915a6.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
@@ -61,6 +58,7 @@ table Dates
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [MonthNameShort]
+		sortByColumn: Monthnumber
 
 		annotation SummarizationSetBy = Automatic
 
@@ -69,6 +67,7 @@ table Dates
 		summarizeBy: none
 		isNameInferred
 		sourceColumn: [MonthNameLong]
+		sortByColumn: Monthnumber
 
 		annotation SummarizationSetBy = Automatic
 
