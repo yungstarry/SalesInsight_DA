@@ -65,23 +65,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "81d0ff306182271daba3",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Is Top 5 Customer"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
