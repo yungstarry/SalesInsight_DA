@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "31f63de54be708604099",
+  "name": "5991aeef7130043a4583",
   "position": {
-    "x": 252.1485820796166,
-    "y": 900.0047929703104,
-    "z": 23000,
-    "height": 108.58953534815605,
-    "width": 242.94607908401014,
-    "tabOrder": 17000
+    "x": 362.38826001730627,
+    "y": 141.049322761227,
+    "z": 26000,
+    "height": 52.079749942606888,
+    "width": 119.34942695180744,
+    "tabOrder": 18003
   },
   "visual": {
     "visualType": "card",
@@ -23,31 +23,16 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Order"
+                  "Property": "MOM Sales Growth Trend Icon"
                 }
               },
-              "queryRef": "_Measures.Total Order",
-              "nativeQueryRef": "Total Order"
+              "queryRef": "_Measures.MOM Sales Growth Trend Icon",
+              "nativeQueryRef": "MOM Sales Growth Trend Icon"
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "_Measures"
-                  }
-                },
-                "Property": "Total Order"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
@@ -58,33 +43,21 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'''Segoe UI Bold'', wf_segoe-ui_bold, helvetica, arial, sans-serif'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "27D"
+                  "Value": "15D"
                 }
               }
             },
             "bold": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 1,
-                      "Percent": 0
-                    }
-                  }
+                  "Value": "true"
                 }
               }
             },
@@ -92,6 +65,22 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "MOM Trend Color"
+                    }
+                  }
                 }
               }
             }
@@ -111,7 +100,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "10D"
                 }
               }
             }
@@ -120,29 +109,9 @@
       ]
     },
     "visualContainerObjects": {
-      "visualHeader": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
       "title": [
         {
           "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Total Order'"
-                }
-              }
-            },
             "show": {
               "expr": {
                 "Literal": {
@@ -160,21 +129,14 @@
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'left'"
+                  "Value": "'center'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "17D"
-                }
-              }
-            },
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
+                  "Value": "20D"
                 }
               }
             },
@@ -254,6 +216,19 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

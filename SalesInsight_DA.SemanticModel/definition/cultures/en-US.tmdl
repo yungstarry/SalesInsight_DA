@@ -3975,32 +3975,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "v_Measures_measure.YOY_sales_checkamte": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "YOY Sales checkamte"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "YOY sales checkamte": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "yoy sale checkamte": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        }
-			      ]
-			    },
 			    "v_Measures_measure.total_sales_PM": {
 			      "Definition": {
 			        "Binding": {

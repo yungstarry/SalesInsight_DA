@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "782a3772d31241ed5096",
+  "name": "55a95a3a740d07dae6d2",
   "position": {
-    "x": 363.76335522262463,
-    "y": 145.87464498775304,
-    "z": 12000,
-    "height": 66.474521766571,
-    "width": 131.10252903962615,
-    "tabOrder": 6000
+    "x": 228.98109036060669,
+    "y": 345.8651843758322,
+    "z": 26002,
+    "height": 52.079749942606888,
+    "width": 119.34942695180744,
+    "tabOrder": 18006
   },
   "visual": {
     "visualType": "card",
@@ -23,32 +23,16 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "MOM Sales Growth"
+                  "Property": "YOY Qty Growth Trend Icon"
                 }
               },
-              "queryRef": "_Measures.MOM Sales Growth",
-              "nativeQueryRef": "Growth Monthly %",
-              "displayName": "Growth Monthly %"
+              "queryRef": "_Measures.YOY Qty Growth Trend Icon",
+              "nativeQueryRef": "YOY Qty Growth Trend Icon"
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "_Measures"
-                  }
-                },
-                "Property": "MOM Sales Growth"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
@@ -59,76 +43,21 @@
             "fontFamily": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "'''Segoe UI Bold'', wf_segoe-ui_bold, helvetica, arial, sans-serif'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "15D"
                 }
               }
             },
             "bold": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "FillRule": {
-                      "Input": {
-                        "Measure": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "_Measures"
-                            }
-                          },
-                          "Property": "YOY Sales Growth"
-                        }
-                      },
-                      "FillRule": {
-                        "linearGradient2": {
-                          "min": {
-                            "color": {
-                              "Literal": {
-                                "Value": "'#EC0303'"
-                              }
-                            },
-                            "value": {
-                              "Literal": {
-                                "Value": "0D"
-                              }
-                            }
-                          },
-                          "max": {
-                            "color": {
-                              "Literal": {
-                                "Value": "'#19A600'"
-                              }
-                            },
-                            "value": {
-                              "Literal": {
-                                "Value": "1D"
-                              }
-                            }
-                          },
-                          "nullColoringStrategy": {
-                            "strategy": {
-                              "Literal": {
-                                "Value": "'asZero'"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
+                  "Value": "true"
                 }
               }
             },
@@ -136,6 +65,22 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Measure": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "_Measures"
+                        }
+                      },
+                      "Property": "YOY Qty Trend Color"
+                    }
+                  }
                 }
               }
             }
@@ -148,7 +93,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },

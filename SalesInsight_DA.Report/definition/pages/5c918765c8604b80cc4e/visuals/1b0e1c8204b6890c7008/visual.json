@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "ee9cd89c9b458147c26d",
+  "name": "1b0e1c8204b6890c7008",
   "position": {
-    "x": 528.10314514553625,
-    "y": 627.8149277953928,
-    "z": 16000,
-    "height": 426.54484800216392,
-    "width": 672.13127563977343,
-    "tabOrder": 11000
+    "x": 239.83103826531644,
+    "y": 371.9050593471357,
+    "z": 26001,
+    "height": 39.059812456955164,
+    "width": 136.70934359934307,
+    "tabOrder": 18008
   },
   "visual": {
     "visualType": "shape",
@@ -101,6 +101,59 @@
                 }
               }
             }
+          }
+        }
+      ],
+      "text": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Vs. last year'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ]

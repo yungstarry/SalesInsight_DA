@@ -18,24 +18,14 @@ table _Measures
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'YOY Sales Growth' = DIVIDE([Total Sales Amount] - [Total Sales SPLY], [Total Sales SPLY], 0)
-		formatString: 0.00
 		displayFolder: YOY Sales
 		lineageTag: 86fb891a-d510-4b01-8f4f-9883a354d5a8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Total Sales SPLY' = CALCULATE([Total Sales Amount], SAMEPERIODLASTYEAR(Dates[Date]))
 		displayFolder: YOY Sales
 		lineageTag: 45c914e5-f617-4082-8d58-4a4c5c64dced
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	measure 'YOY Sales checkamte' = ```
-			
-			(CALCULATE(SUM(transactions[norm_sales_amount]), SAMEPERIODLASTYEAR(Dates[Date])) - SUM(transactions[norm_sales_amount])) 
-			/ CALCULATE(SUM(transactions[norm_sales_amount]), SAMEPERIODLASTYEAR(Dates[Date]))
-			
-			```
-		displayFolder: YOY Sales
-		lineageTag: e984a201-9661-4fd7-b1dc-18eb9bb1aa53
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -120,6 +110,92 @@ table _Measures
 		lineageTag: cdeb49c4-5aa8-4087-bc2a-7e690f2b9414
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'YOY Sales Growth Trend Icon' = ```
+			
+			VAR PositiveIcon = UNICHAR(9650)
+			VAR NegativeIcon = UNICHAR(9660)
+			VAR Choice = IF([YOY Sales Growth] > 0, PositiveIcon , NegativeIcon)
+			VAR Display = Choice & " " & FORMAT([YOY Sales Growth], "0.00%")
+			Return Display
+			
+			```
+		displayFolder: YOY Sales
+		lineageTag: 1d492fcc-6580-4d08-bd25-b2a979432d67
+
+	measure 'MOM Sales Growth Trend Icon' = ```
+			
+			VAR PositiveIcon = UNICHAR(9650)
+			VAR NegativeIcon = UNICHAR(9660)
+			VAR Choice = IF([MOM Sales Growth] > 0, PositiveIcon , NegativeIcon)
+			VAR Display = Choice & " " & FORMAT([MOM Sales Growth], "0.00%")
+			Return Display
+			
+			```
+		displayFolder: MOM Sales
+		lineageTag: f5408a6f-6189-4863-86ab-d6c8dbb59b01
+
+	measure 'YOY Trend Color' = IF([YOY Sales Growth] < 0, "Red", "Green")
+		displayFolder: YOY Sales
+		lineageTag: c5a8b412-ec37-4030-97bc-9b6834d1faf3
+
+	measure 'MOM Trend Color' = IF([MOM Sales Growth] < 0, "Red", "Green")
+		displayFolder: MOM Sales
+		lineageTag: 729ffba1-f696-4f38-a854-67a923ae2843
+
+	measure 'Total Quantity SPLY' = CALCULATE([Total Sales Quantity], SAMEPERIODLASTYEAR(Dates[Date]))
+		formatString: 0
+		displayFolder: YOY Quantity
+		lineageTag: bfa25a03-6653-4b58-a38b-7d1c413547f2
+
+	measure 'YOY QTY Growth' = DIVIDE([Total Sales Quantity]-[Total Quantity SPLY],[Total Sales SPLY], 0)
+		displayFolder: YOY Quantity
+		lineageTag: 690e7fc4-2123-416a-b3a9-7d8947abecf3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'YOY Qty Growth Trend Icon' = ```
+			
+			VAR PositiveIcon = UNICHAR(9650)
+			VAR NegativeIcon = UNICHAR(9660)
+			VAR Choice = IF([YOY QTY Growth] > 0, PositiveIcon , NegativeIcon)
+			VAR Display = Choice & " " & FORMAT([YOY QTY Growth], "0.00%")
+			Return Display
+			
+			```
+		displayFolder: YOY Quantity
+		lineageTag: 1ce9a1b6-16bc-4c68-aad6-c955724f78f3
+
+	measure 'YOY Qty Trend Color' = IF([YOY QTY Growth] < 0, "Red", "Green")
+		displayFolder: YOY Quantity
+		lineageTag: 99d22583-0fb1-42fd-becf-ebb15964926e
+
+	measure 'Total Qty PM' = CALCULATE([Total Sales Quantity], PARALLELPERIOD(Dates[Date],-1,MONTH))
+		formatString: 0
+		displayFolder: MOM Quantity
+		lineageTag: 4727cd1c-f679-4c8f-be34-74ed526f2d1b
+
+	measure 'MOM Quantity Growth' = DIVIDE([Total Sales Quantity]-[Total Qty PM],[Total Qty PM],0)
+		displayFolder: MOM Quantity
+		lineageTag: efe4e805-07c5-43db-b189-444bfd47acd9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MOM Qty Growth Trend Icon' = ```
+			
+			VAR PositiveIcon = UNICHAR(9650)
+			VAR NegativeIcon = UNICHAR(9660)
+			VAR Choice = IF([MOM Quantity Growth] > 0, PositiveIcon , NegativeIcon)
+			VAR Display = Choice & " " & FORMAT([MOM Quantity Growth], "0.00%")
+			Return Display
+			
+			```
+		displayFolder: MOM Quantity
+		lineageTag: 0242ecba-1a52-4b79-abde-36d82c45a2e0
+
+	measure 'MOM QTY Trend Color' = IF([MOM Quantity Growth] < 0, "Red", "Green")
+		displayFolder: MOM Quantity
+		lineageTag: bbc1c8bd-f2b6-4ee6-aa4b-caadd0a67ce2
 
 	partition _Measures = m
 		mode: import
