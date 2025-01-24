@@ -20,53 +20,14 @@
           }
         },
         "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
+        "howCreated": "User",
+        "objects": {
+          "general": [
             {
-              "Name": "d",
-              "Entity": "Dates",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "d"
-                          }
-                        },
-                        "Property": "Year"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "2020L"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "2017L"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
+              "properties": {}
             }
           ]
-        },
-        "howCreated": "User"
+        }
       }
     ]
   }

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "a337e3bc065ca66caa35",
   "position": {
-    "x": 256.6655145987047,
-    "y": 267.74460155979989,
+    "x": 252.1485820796166,
+    "y": 259.97070962588208,
     "z": 10000,
-    "height": 110.79086961095167,
-    "width": 195.73053631268129,
-    "tabOrder": 5000
+    "height": 90.184529356943159,
+    "width": 242.94607908401014,
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "card",
@@ -62,17 +62,17 @@
                 }
               }
             },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "27D"
+                }
+              }
+            },
             "bold": {
               "expr": {
                 "Literal": {
                   "Value": "false"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
                 }
               }
             },
@@ -88,10 +88,10 @@
                 }
               }
             },
-            "fontSize": {
+            "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "35D"
+                  "Value": "1D"
                 }
               }
             }
@@ -136,6 +136,13 @@
       "title": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total Quantity Sold'"
+                }
+              }
+            },
             "show": {
               "expr": {
                 "Literal": {
@@ -143,10 +150,10 @@
                 }
               }
             },
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Sales Quantity'"
+                  "Value": "false"
                 }
               }
             },
@@ -160,7 +167,14 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "18D"
+                  "Value": "17D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             },
@@ -168,13 +182,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "titleWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -227,6 +234,26 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

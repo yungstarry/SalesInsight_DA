@@ -51,7 +51,9 @@ table _Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'Profit Margin %' = (SUM(transactions[profit_margin]) / SUM(transactions[norm_sales_amount]))  * 100
+	measure 'Profit Margin %' = ```
+			DIVIDE([Profit],[Total Sales Amount],0 ) 
+			```
 		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Sales
 		lineageTag: 59dfbf26-3859-442c-81a7-9621717c0f63
@@ -72,14 +74,15 @@ table _Measures
 		displayFolder: Sales
 		lineageTag: 08fdd3fa-40b1-4a3a-875a-d74aef01d857
 
-	measure 'Total Profit Margin' = ```
-			sum(transactions[profit_margin])
+	measure 'Average Sales Per Order' = ```
+			DIVIDE([Total Sales Amount],[Total Order], 0) 
 			
 			```
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		displayFolder: Sales
 		lineageTag: 6005b15b-7b7f-4b2d-8d83-597ce63c6c1b
 
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	measure Greetings = ```
 			
@@ -98,10 +101,25 @@ table _Measures
 		displayFolder: Sales
 		lineageTag: 33785685-0dbc-4b1b-94d6-af9fbe1124d3
 
-	measure 'Total Order' = count(transactions[order_date])
+	measure 'Total Order' = count(transactions[transaction_id])
 		formatString: 0
 		displayFolder: Order
 		lineageTag: 78437915-9799-4106-b941-43954bc24472
+
+	measure 'Total Cost' = ```
+			SUM(transactions[norm_cost])
+			
+			```
+		displayFolder: Sales
+		lineageTag: 45fbe6de-d25a-48c2-a9cf-8295bc4dc3f4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Profit = [Total Sales Amount] - [Total Cost]
+		displayFolder: Sales
+		lineageTag: cdeb49c4-5aa8-4087-bc2a-7e690f2b9414
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition _Measures = m
 		mode: import

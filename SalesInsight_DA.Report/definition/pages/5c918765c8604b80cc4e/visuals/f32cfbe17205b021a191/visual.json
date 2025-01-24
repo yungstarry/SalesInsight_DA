@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "f32cfbe17205b021a191",
   "position": {
-    "x": 247.4329421311254,
-    "y": 707.21505101657488,
-    "z": 15000,
-    "height": 86.786181195245476,
-    "width": 223.4282537154192,
-    "tabOrder": 10000
+    "x": 252.1485820796166,
+    "y": 695.249101318067,
+    "z": 14000,
+    "height": 86.503528158700576,
+    "width": 242.94607908401014,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "card",
@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Profit Margin"
+                  "Property": "Average Sales Per Order"
                 }
               },
               "queryRef": "_Measures.Total Profit Margin",
-              "nativeQueryRef": "Total Profit Margin"
+              "nativeQueryRef": "Average Sales Per Order"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Total Profit Margin"
+                "Property": "Average Sales Per Order"
               }
             },
             "direction": "Descending"
@@ -62,17 +62,17 @@
                 }
               }
             },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "27D"
+                }
+              }
+            },
             "bold": {
               "expr": {
                 "Literal": {
                   "Value": "false"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
                 }
               }
             },
@@ -88,17 +88,10 @@
                 }
               }
             },
-            "labelPrecision": {
+            "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "0L"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "35D"
+                  "Value": "1D"
                 }
               }
             }
@@ -143,6 +136,13 @@
       "title": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Avg Sales Per Order'"
+                }
+              }
+            },
             "show": {
               "expr": {
                 "Literal": {
@@ -150,10 +150,10 @@
                 }
               }
             },
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Profit Margin'"
+                  "Value": "false"
                 }
               }
             },
@@ -167,7 +167,14 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "18D"
+                  "Value": "19D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             },
@@ -175,13 +182,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "titleWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -234,6 +234,26 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

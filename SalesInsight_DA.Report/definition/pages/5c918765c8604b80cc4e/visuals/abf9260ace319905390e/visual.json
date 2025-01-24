@@ -4,10 +4,10 @@
   "position": {
     "x": 1272.2484860324282,
     "y": 121.86995657204683,
-    "z": 23000,
+    "z": 22000,
     "height": 57.2419492989917,
     "width": 596.42418140562313,
-    "tabOrder": 18000
+    "tabOrder": 16000
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -458,7 +458,7 @@
                           [
                             {
                               "Literal": {
-                                "Value": "2018L"
+                                "Value": "2020L"
                               }
                             }
                           ]

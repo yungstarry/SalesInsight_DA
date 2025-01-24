@@ -336,6 +336,16 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.6
 			          }
+			        },
+			        {
+			          "Customer": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
 			        }
 			      ],
 			      "NameType": "Name"
@@ -4595,7 +4605,7 @@ cultureInfo en-US
 			      "Definition": {
 			        "Binding": {
 			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Total Profit Margin"
+			          "ConceptualProperty": "Average Sales Per Order"
 			        }
 			      },
 			      "State": "Generated",
@@ -4788,9 +4798,197 @@ cultureInfo en-US
 			          }
 			        }
 			      ]
+			    },
+			    "v_Measures_measure.total_order": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Total Order"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "total order": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "order": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "aggregate order": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "overall order": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "total instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "total direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "total edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "instruction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "direction": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "edict": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "total command": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        },
+			        {
+			          "total directive": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.485
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "v_Measures_measure_has_customer_sales_rank": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "v_Measures_measure": {
+			          "Target": {
+			            "Entity": "v_Measures_measure"
+			          }
+			        },
+			        "v_Measures_measure.customer_sales_rank": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.customer_sales_rank"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "v_Measures_measure"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.customer_sales_rank"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_customer_sales_rank"
+			        }
+			      ]
+			    },
+			    "transaction_has_v_Measures_measure_total_sales_per_customer": {
+			      "Binding": {
+			        "ConceptualEntity": "transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "v_Measures_measure.total_sales_per_customer": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.total_sales_per_customer"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.total_sales_per_customer"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_total_sales_per_customer"
+			        }
+			      ]
+			    },
 			    "transaction_has_v_Measures_measure_profit_margin_": {
 			      "Binding": {
 			        "ConceptualEntity": "transactions"
@@ -6395,72 +6593,6 @@ cultureInfo en-US
 			        }
 			      ]
 			    },
-			    "transaction_has_v_Measures_measure_total_sales_per_customer": {
-			      "Binding": {
-			        "ConceptualEntity": "transactions"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "transaction": {
-			          "Target": {
-			            "Entity": "transaction"
-			          }
-			        },
-			        "v_Measures_measure.total_sales_per_customer": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.total_sales_per_customer"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "transaction"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.total_sales_per_customer"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "transactions_have_total_sales_per_customer"
-			        }
-			      ]
-			    },
-			    "v_Measures_measure_has_customer_sales_rank": {
-			      "Binding": {
-			        "ConceptualEntity": "_Measures"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "v_Measures_measure": {
-			          "Target": {
-			            "Entity": "v_Measures_measure"
-			          }
-			        },
-			        "v_Measures_measure.customer_sales_rank": {
-			          "Target": {
-			            "Entity": "v_Measures_measure.customer_sales_rank"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "v_Measures_measure"
-			            },
-			            "Object": {
-			              "Role": "v_Measures_measure.customer_sales_rank"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "Phrasing_measures_have_customer_sales_rank"
-			        }
-			      ]
-			    },
 			    "v_Measures_measure_has_is_top_5_customer": {
 			      "Binding": {
 			        "ConceptualEntity": "_Measures"
@@ -6557,6 +6689,39 @@ cultureInfo en-US
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "Phrasing_measures_have_greetings"
+			        }
+			      ]
+			    },
+			    "transaction_has_v_Measures_measure_total_order": {
+			      "Binding": {
+			        "ConceptualEntity": "transactions"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "transaction": {
+			          "Target": {
+			            "Entity": "transaction"
+			          }
+			        },
+			        "v_Measures_measure.total_order": {
+			          "Target": {
+			            "Entity": "v_Measures_measure.total_order"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "transaction"
+			            },
+			            "Object": {
+			              "Role": "v_Measures_measure.total_order"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "transactions_have_total_order"
 			        }
 			      ]
 			    },

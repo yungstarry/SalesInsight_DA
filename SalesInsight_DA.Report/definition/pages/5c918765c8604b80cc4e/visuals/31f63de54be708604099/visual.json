@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "31f63de54be708604099",
   "position": {
-    "x": 256.6655145987047,
-    "y": 891.86650036816093,
-    "z": 25000,
-    "height": 108.9443551174358,
-    "width": 147.7211594812689,
-    "tabOrder": 18001
+    "x": 252.1485820796166,
+    "y": 900.0047929703104,
+    "z": 24000,
+    "height": 108.58953534815605,
+    "width": 242.94607908401014,
+    "tabOrder": 17000
   },
   "visual": {
     "visualType": "card",
@@ -62,17 +62,17 @@
                 }
               }
             },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "27D"
+                }
+              }
+            },
             "bold": {
               "expr": {
                 "Literal": {
                   "Value": "false"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
                 }
               }
             },
@@ -88,17 +88,10 @@
                 }
               }
             },
-            "labelPrecision": {
+            "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "0L"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "35D"
+                  "Value": "1D"
                 }
               }
             }
@@ -143,6 +136,13 @@
       "title": [
         {
           "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Total Order'"
+                }
+              }
+            },
             "show": {
               "expr": {
                 "Literal": {
@@ -150,10 +150,10 @@
                 }
               }
             },
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Order'"
+                  "Value": "false"
                 }
               }
             },
@@ -167,7 +167,14 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "18D"
+                  "Value": "17D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             },
@@ -175,13 +182,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "titleWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -234,6 +234,26 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

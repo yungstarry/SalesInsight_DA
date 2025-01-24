@@ -111,6 +111,25 @@ table transactions
 
 		annotation SummarizationSetBy = Automatic
 
+	column norm_cost
+		dataType: double
+		lineageTag: 1257c0de-1506-496a-803a-480737c73b0c
+		summarizeBy: sum
+		sourceColumn: norm_cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column transaction_id
+		dataType: int64
+		formatString: 0
+		lineageTag: c6f2d31e-6e28-48b0-b22f-25dd1d9e6718
+		summarizeBy: sum
+		sourceColumn: transaction_id
+
+		annotation SummarizationSetBy = Automatic
+
 	partition transactions = m
 		mode: import
 		source =
@@ -124,9 +143,13 @@ table transactions
 				    #"Filtered Rows2" = Table.SelectRows(#"Added Conditional Column1", each true),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Filtered Rows2",{{"norm_currency", type text}, {"norm_sales_amount", type number}}),
 				    #"Filtered Rows3" = Table.SelectRows(#"Changed Type", each ([product_code] <> null and [product_code] <> "")),
-				    #"Filtered Rows4" = Table.SelectRows(#"Filtered Rows3", each [product_code] <> null and [product_code] <> "")
+				    #"Filtered Rows4" = Table.SelectRows(#"Filtered Rows3", each [product_code] <> null and [product_code] <> ""),
+				    #"Added Custom" = Table.AddColumn(#"Filtered Rows4", "norm_cost", each if [currency] = "USD" then [cost_price] else [cost_price]/86.61),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"norm_cost", type number}}),
+				    #"Added Index" = Table.AddIndexColumn(#"Changed Type1", "Index", 1, 1, Int64.Type),
+				    #"Renamed Columns" = Table.RenameColumns(#"Added Index",{{"Index", "transaction_id"}})
 				in
-				    #"Filtered Rows4"
+				    #"Renamed Columns"
 
 	annotation PBI_NavigationStepName = Navigation
 
