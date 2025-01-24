@@ -28,7 +28,7 @@
           "expanded": {
             "expr": {
               "Literal": {
-                "Value": "true"
+                "Value": "false"
               }
             }
           }
@@ -55,6 +55,11 @@
         {
           "name": "home09924787351626096.png",
           "path": "home09924787351626096.png",
+          "type": "Image"
+        },
+        {
+          "name": "profit-growth3789938948157432.png",
+          "path": "profit-growth3789938948157432.png",
           "type": "Image"
         }
       ]

@@ -7,7 +7,7 @@ table _Measures
 		lineageTag: 91dd52e9-f77c-498e-ae7a-e43937129174
 
 	measure 'Total Sales Quantity' = SUM(transactions[sales_qty])
-		formatString: 0
+		formatString: #,0
 		displayFolder: Sales
 		lineageTag: 97ff678b-4ee0-4586-8f3c-0fc2e16a6615
 
@@ -52,10 +52,9 @@ table _Measures
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Profit Margin %' = (SUM(transactions[profit_margin]) / SUM(transactions[norm_sales_amount]))  * 100
+		formatString: 0.00%;-0.00%;0.00%
 		displayFolder: Sales
 		lineageTag: 59dfbf26-3859-442c-81a7-9621717c0f63
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Total Sales per Customer' = CALCULATE(SUM(transactions[norm_sales_amount]), ALLEXCEPT(customers,customers[customer_code]))
 		displayFolder: Sales
@@ -72,6 +71,37 @@ table _Measures
 		formatString: """TRUE"";""TRUE"";""FALSE"""
 		displayFolder: Sales
 		lineageTag: 08fdd3fa-40b1-4a3a-875a-d74aef01d857
+
+	measure 'Total Profit Margin' = ```
+			sum(transactions[profit_margin])
+			
+			```
+		displayFolder: Sales
+		lineageTag: 6005b15b-7b7f-4b2d-8d83-597ce63c6c1b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Greetings = ```
+			
+			VAR CurrentTime = NOW()
+			VAR Namee = "Adordev"
+			VAR Greeting = 
+			    SWITCH(
+			        TRUE(),
+			        HOUR(CurrentTime) < 12, "Good Morning",
+			        HOUR(CurrentTime) < 18, "Good Afternoon",
+			        "Good Evening"
+			    )
+			RETURN 
+			   Greeting & " - " & Namee
+			```
+		displayFolder: Sales
+		lineageTag: 33785685-0dbc-4b1b-94d6-af9fbe1124d3
+
+	measure 'Total Order' = count(transactions[order_date])
+		formatString: 0
+		displayFolder: Order
+		lineageTag: 78437915-9799-4106-b941-43954bc24472
 
 	partition _Measures = m
 		mode: import

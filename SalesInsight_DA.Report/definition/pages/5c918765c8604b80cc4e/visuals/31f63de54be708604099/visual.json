@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "c1e764c1ce7bd0674371",
+  "name": "31f63de54be708604099",
   "position": {
     "x": 256.6655145987047,
-    "y": 59.088463792507554,
-    "z": 9000,
-    "height": 83.093152208213752,
-    "width": 214.1956812478399,
-    "tabOrder": 4000
+    "y": 891.86650036816093,
+    "z": 25000,
+    "height": 108.9443551174358,
+    "width": 147.7211594812689,
+    "tabOrder": 18001
   },
   "visual": {
     "visualType": "card",
@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Sales Amount"
+                  "Property": "Total Order"
                 }
               },
-              "queryRef": "_Measures.Total Sales Amount",
-              "nativeQueryRef": "Total Sales Amount"
+              "queryRef": "_Measures.Total Order",
+              "nativeQueryRef": "Total Order"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Total Sales Amount"
+                "Property": "Total Order"
               }
             },
             "direction": "Descending"
@@ -85,6 +85,13 @@
                       "Percent": 0
                     }
                   }
+                }
+              }
+            },
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "0L"
                 }
               }
             },
@@ -146,7 +153,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Sales Amount'"
+                  "Value": "'Total Order'"
                 }
               }
             },

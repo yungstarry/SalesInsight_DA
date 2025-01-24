@@ -1,13 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "847297a5d06880083eb2",
+  "name": "e09e1795264b6bb907cc",
   "position": {
-    "x": 15.416435164441259,
-    "y": 0,
+    "x": 0.63994660665831271,
+    "y": 16.438743642332934,
     "z": 4000,
-    "height": 1081.3528093915227,
-    "width": 209.22304866027423,
-    "tabOrder": 0
+    "height": 171.90573469628492,
+    "width": 294.80237235587947
   },
   "visual": {
     "visualType": "shape",
@@ -25,7 +24,7 @@
             "rectangleRoundedCurve": {
               "expr": {
                 "Literal": {
-                  "Value": "20L"
+                  "Value": "10L"
                 }
               }
             }
@@ -53,7 +52,7 @@
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#035AA6'"
+                      "Value": "'#D9D9D9'"
                     }
                   }
                 }
@@ -71,35 +70,10 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }
-          }
-        },
-        {
-          "properties": {
-            "lineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#F26835'"
-                    }
-                  }
-                }
-              }
-            },
-            "weight": {
-              "expr": {
-                "Literal": {
-                  "Value": "2D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "id": "default"
           }
         }
       ],
@@ -115,48 +89,8 @@
             }
           }
         }
-      ]
-    },
-    "visualContainerObjects": {
-      "border": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#F26835'"
-                    }
-                  }
-                }
-              }
-            },
-            "width": {
-              "expr": {
-                "Literal": {
-                  "Value": "6D"
-                }
-              }
-            },
-            "radius": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
       ],
-      "dropShadow": [
+      "shadow": [
         {
           "properties": {
             "show": {
@@ -172,5 +106,6 @@
     },
     "drillFilterOtherVisuals": true
   },
+  "parentGroupName": "61c8e47dd8706cc2960a",
   "howCreated": "InsertVisualButton"
 }

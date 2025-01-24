@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "c1e764c1ce7bd0674371",
+  "name": "782a3772d31241ed5096",
   "position": {
-    "x": 256.6655145987047,
-    "y": 59.088463792507554,
-    "z": 9000,
-    "height": 83.093152208213752,
-    "width": 214.1956812478399,
-    "tabOrder": 4000
+    "x": 363.76335522262463,
+    "y": 145.87464498775304,
+    "z": 12000,
+    "height": 66.474521766571,
+    "width": 131.10252903962615,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "card",
@@ -23,11 +23,12 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Sales Amount"
+                  "Property": "MOM Sales Growth"
                 }
               },
-              "queryRef": "_Measures.Total Sales Amount",
-              "nativeQueryRef": "Total Sales Amount"
+              "queryRef": "_Measures.MOM Sales Growth",
+              "nativeQueryRef": "Growth Monthly %",
+              "displayName": "Growth Monthly %"
             }
           ]
         }
@@ -42,7 +43,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Total Sales Amount"
+                "Property": "MOM Sales Growth"
               }
             },
             "direction": "Descending"
@@ -69,13 +70,6 @@
                 }
               }
             },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
             "color": {
               "solid": {
                 "color": {
@@ -88,23 +82,10 @@
                 }
               }
             },
-            "fontSize": {
+            "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "35D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "categoryLabels": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
+                  "Value": "1D"
                 }
               }
             },
@@ -117,22 +98,29 @@
             }
           }
         }
-      ]
-    },
-    "visualContainerObjects": {
-      "visualHeader": [
+      ],
+      "categoryLabels": [
         {
           "properties": {
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }
           }
         }
-      ],
+      ]
+    },
+    "visualContainerObjects": {
       "title": [
         {
           "properties": {
@@ -143,24 +131,24 @@
                 }
               }
             },
-            "text": {
+            "titleWrap": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Sales Amount'"
+                  "Value": "false"
                 }
               }
             },
             "alignment": {
               "expr": {
                 "Literal": {
-                  "Value": "'left'"
+                  "Value": "'center'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "18D"
+                  "Value": "20D"
                 }
               }
             },
@@ -168,13 +156,6 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "titleWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
                 }
               }
             }
@@ -221,6 +202,39 @@
         }
       ],
       "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "visualHeader": [
         {
           "properties": {
             "show": {

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "8e635926440e8030a482",
+  "name": "eb2d297370d00644ed58",
   "position": {
-    "x": 53.516474312802558,
-    "y": 193.48263790013232,
-    "z": 5000,
-    "height": 88.508015209635,
-    "width": 92.624667079850582,
-    "tabOrder": 1000
+    "x": 430.23787698919563,
+    "y": 33.2372608832855,
+    "z": 13000,
+    "height": 72.01406524711858,
+    "width": 86.786181195245476,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "image",
@@ -20,7 +20,7 @@
                 "ResourcePackageItem": {
                   "PackageName": "RegisteredResources",
                   "PackageType": 1,
-                  "ItemName": "home09924787351626096.png"
+                  "ItemName": "profit-growth3789938948157432.png"
                 }
               }
             }

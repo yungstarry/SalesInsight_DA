@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
-  "name": "bff58030bdec19b3d06d",
+  "name": "4b8dfe70903067a5c862",
   "position": {
-    "x": 0,
-    "y": 13.214087283806792,
-    "z": 6000,
-    "height": 129.93852495743346,
-    "width": 218.03244018281208,
-    "tabOrder": 3000
+    "x": 2.1152372483439783,
+    "y": 0,
+    "z": 0,
+    "height": 83.9938730391586,
+    "width": 872.216871363539,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "shape",
@@ -18,7 +18,14 @@
             "tileShape": {
               "expr": {
                 "Literal": {
-                  "Value": "'rectangle'"
+                  "Value": "'rectangleRounded'"
+                }
+              }
+            },
+            "rectangleRoundedCurve": {
+              "expr": {
+                "Literal": {
+                  "Value": "10L"
                 }
               }
             }
@@ -38,38 +45,17 @@
           }
         }
       ],
-      "text": [
+      "fill": [
         {
           "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        },
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Sales Performance Overview'"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "23D"
+            "fillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#F27405'"
+                    }
+                  }
                 }
               }
             }
@@ -79,7 +65,7 @@
           }
         }
       ],
-      "fill": [
+      "outline": [
         {
           "properties": {
             "show": {
@@ -95,5 +81,6 @@
     },
     "drillFilterOtherVisuals": true
   },
+  "parentGroupName": "287a4e7cd916b4eaab97",
   "howCreated": "InsertVisualButton"
 }
