@@ -92,7 +92,7 @@ table _Measures
 		lineageTag: 33785685-0dbc-4b1b-94d6-af9fbe1124d3
 
 	measure 'Total Order' = count(transactions[transaction_id])
-		formatString: 0
+		formatString: #,0
 		displayFolder: Order
 		lineageTag: 78437915-9799-4106-b941-43954bc24472
 
@@ -106,10 +106,9 @@ table _Measures
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure Profit = [Total Sales Amount] - [Total Cost]
+		formatString: \$#,0;(\$#,0);\$#,0
 		displayFolder: Sales
 		lineageTag: cdeb49c4-5aa8-4087-bc2a-7e690f2b9414
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'YOY Sales Growth Trend Icon' = ```
 			
@@ -196,6 +195,78 @@ table _Measures
 	measure 'MOM QTY Trend Color' = IF([MOM Quantity Growth] < 0, "Red", "Green")
 		displayFolder: MOM Quantity
 		lineageTag: bbc1c8bd-f2b6-4ee6-aa4b-caadd0a67ce2
+
+	measure 'Total N of Customers' = COUNT(customers[customer_code])
+		formatString: 0
+		displayFolder: Customer
+		lineageTag: a494165c-b83a-479b-9781-af88107e32cd
+
+	measure 'Avg Sales per Customer' = DIVIDE([Total Sales Amount],[Total N of Customers],0)
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Customer
+		lineageTag: ac44d4ed-2d36-43b0-b488-0794f433663a
+
+	measure 'First Purchase Date' = ```
+			
+			CALCULATE(
+			    MIN(Dates[Date]),
+			    ALLEXCEPT(transactions, transactions[customer_code])
+			)
+			
+			```
+		formatString: General Date
+		displayFolder: Sales
+		lineageTag: 6c97e2d3-7c56-40db-9354-2f8b9dda7dad
+
+	measure 'Customer Type' = ```
+			
+			IF(
+			    MIN(Dates[Date]) = [First Purchase Date],
+			    "New",
+			    "Repeat"
+			)
+			
+			
+			```
+		displayFolder: Sales
+		lineageTag: 19118471-a5e5-4a93-96bd-add1e9217d20
+
+	measure 'Last Transaction Date' = ```
+			
+			CALCULATE(
+			    MAX(Dates[Date]),
+			    ALLEXCEPT(transactions, transactions[customer_code])
+			)
+			
+			```
+		formatString: General Date
+		displayFolder: Sales
+		lineageTag: b53f2862-0e08-41b4-a981-493ffda95b8c
+
+	measure 'Inactive Period (Days)' = ```
+			
+			DATEDIFF(
+			    [Last Transaction Date],
+			    TODAY(),
+			    DAY
+			)
+			
+			```
+		formatString: 0
+		displayFolder: Sales
+		lineageTag: 4d46f6bc-91b1-49bd-a92b-7862fe8d8686
+
+	measure 'Churned Customer' = ```
+			
+			IF(
+			    [Inactive Period (Days)] > 90,
+			    "Churned",
+			    "Active"
+			)
+			
+			```
+		displayFolder: Sales
+		lineageTag: d4c49f8f-b446-423b-9a27-bb96989b4186
 
 	partition _Measures = m
 		mode: import

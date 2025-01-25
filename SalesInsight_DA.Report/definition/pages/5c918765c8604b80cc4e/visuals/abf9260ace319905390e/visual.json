@@ -7,7 +7,7 @@
     "z": 21000,
     "height": 57.2419492989917,
     "width": 596.42418140562313,
-    "tabOrder": 16000
+    "tabOrder": 14000
   },
   "visual": {
     "visualType": "advancedSlicerVisual",
@@ -411,7 +411,7 @@
             "strictSingleSelect": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },

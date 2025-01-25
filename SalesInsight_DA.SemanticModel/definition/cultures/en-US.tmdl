@@ -3894,16 +3894,6 @@ cultureInfo en-US
 			            },
 			            "Weight": 0.492
 			          }
-			        },
-			        {
-			          "Growth Yearly %": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -4167,16 +4157,6 @@ cultureInfo en-US
 			              "Agent": "Thesaurus"
 			            },
 			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "Growth Monthly %": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
 			          }
 			        }
 			      ]

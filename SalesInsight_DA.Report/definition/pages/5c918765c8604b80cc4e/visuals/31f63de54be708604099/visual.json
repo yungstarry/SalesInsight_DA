@@ -7,7 +7,7 @@
     "z": 23000,
     "height": 108.58953534815605,
     "width": 242.94607908401014,
-    "tabOrder": 17000
+    "tabOrder": 15000
   },
   "visual": {
     "visualType": "card",
@@ -23,11 +23,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Total Order"
+                  "Property": "Profit"
                 }
               },
-              "queryRef": "_Measures.Total Order",
-              "nativeQueryRef": "Total Order"
+              "queryRef": "_Measures.Profit",
+              "nativeQueryRef": "Profit"
             }
           ]
         }
@@ -42,7 +42,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Total Order"
+                "Property": "Profit"
               }
             },
             "direction": "Descending"
@@ -139,7 +139,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Total Order'"
+                  "Value": "'Total Profit'"
                 }
               }
             },

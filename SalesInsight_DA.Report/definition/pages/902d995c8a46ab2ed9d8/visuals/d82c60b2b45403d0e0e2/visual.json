@@ -23,11 +23,11 @@
                       "Entity": "customers"
                     }
                   },
-                  "Property": "customer_code"
+                  "Property": "customer_type"
                 }
               },
-              "queryRef": "customers.customer_code",
-              "nativeQueryRef": "customer_code",
+              "queryRef": "customers.customer_type",
+              "nativeQueryRef": "customer_type",
               "active": true
             }
           ]
@@ -188,7 +188,8 @@
               }
             }
           ]
-        }
+        },
+        "howCreated": "User"
       }
     ]
   }
