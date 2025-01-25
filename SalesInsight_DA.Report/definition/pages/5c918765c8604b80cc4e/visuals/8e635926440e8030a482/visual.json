@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "8e635926440e8030a482",
   "position": {
-    "x": 53.516474312802558,
+    "x": 69.937524031030122,
     "y": 193.48263790013232,
-    "z": 7000,
+    "z": 8000,
     "height": 88.508015209635,
     "width": 92.624667079850582,
-    "tabOrder": 1000
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "image",
@@ -21,6 +21,48 @@
                   "PackageName": "RegisteredResources",
                   "PackageType": 1,
                   "ItemName": "home09924787351626096.png"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "imageScaling": [
+        {
+          "properties": {
+            "imageScalingType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Normal'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "visualLink": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'PageNavigation'"
+                }
+              }
+            },
+            "navigationSection": {
+              "expr": {
+                "Literal": {
+                  "Value": "'e113193c32760d08014c'"
                 }
               }
             }

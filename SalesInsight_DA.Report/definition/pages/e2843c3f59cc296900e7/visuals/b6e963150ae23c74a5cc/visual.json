@@ -3,11 +3,11 @@
   "name": "b6e963150ae23c74a5cc",
   "position": {
     "x": 1211.3135077464049,
-    "y": 184.65144935158611,
-    "z": 1000,
+    "y": 183.7281921048282,
+    "z": 8000,
     "height": 439.47044945677493,
     "width": 686.90339158790039,
-    "tabOrder": 5000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "shape",
@@ -92,6 +92,21 @@
         }
       ],
       "shadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "dropShadow": [
         {
           "properties": {
             "show": {

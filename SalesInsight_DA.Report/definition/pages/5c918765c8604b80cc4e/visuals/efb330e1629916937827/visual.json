@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "efb330e1629916937827",
   "position": {
-    "x": 1244.5507686296903,
-    "y": 649.97310171758318,
-    "z": 18000,
-    "height": 387.76804363833082,
-    "width": 638.894014756488,
-    "tabOrder": 11000
+    "x": 1230.3283582089553,
+    "y": 637.13432835820913,
+    "z": 19000,
+    "height": 431.76119402985074,
+    "width": 659.1044776119403,
+    "tabOrder": 12000
   },
   "visual": {
     "visualType": "columnChart",
@@ -350,6 +350,19 @@
               "expr": {
                 "Literal": {
                   "Value": "15D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }

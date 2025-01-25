@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
+  "name": "cde9a2140d0da366363a",
+  "position": {
+    "x": 537.80111897864185,
+    "y": 10.924638290983021,
+    "z": 41000,
+    "height": 166.1863044164275,
+    "width": 1335.0299788119676,
+    "tabOrder": 1000
+  },
+  "visualGroup": {
+    "displayName": "Date filter group",
+    "groupMode": "ScaleMode"
+  },
+  "isHidden": true
+}

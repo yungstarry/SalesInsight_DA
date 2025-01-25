@@ -4,10 +4,10 @@
   "position": {
     "x": 563,
     "y": 17.618783045075723,
-    "z": 11000,
+    "z": 3000,
     "height": 103.51035038981988,
     "width": 381.00618334976252,
-    "tabOrder": 16000
+    "tabOrder": 26000
   },
   "visualGroup": {
     "displayName": "Card",

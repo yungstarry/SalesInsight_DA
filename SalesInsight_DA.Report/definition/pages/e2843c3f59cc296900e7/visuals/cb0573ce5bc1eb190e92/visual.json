@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "cb0573ce5bc1eb190e92",
   "position": {
-    "x": 552.1078335612425,
-    "y": 649.97310171758318,
-    "z": 15000,
-    "height": 387.76804363833082,
-    "width": 618.5823553278135,
-    "tabOrder": 9000
+    "x": 736.47761194029829,
+    "y": 637.45273631840791,
+    "z": 19000,
+    "height": 429.85074626865674,
+    "width": 489.07462686567163,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "pieChart",
@@ -294,93 +294,6 @@
           }
         }
       ],
-      "labels": [
-        {
-          "properties": {
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "13D"
-                }
-              }
-            },
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "labelStyle": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Data value, percent of total'"
-                }
-              }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'inside'"
-                }
-              }
-            },
-            "background": {
-              "expr": {
-                "Literal": {
-                  "Value": "'auto'"
-                }
-              }
-            },
-            "italic": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            }
-          }
-        },
-        {
-          "properties": {
-            "color": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": 0
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
-                }
-              }
-            ]
-          }
-        }
-      ],
       "legend": [
         {
           "properties": {
@@ -426,10 +339,55 @@
             "startAngle": {
               "expr": {
                 "Literal": {
-                  "Value": "300L"
+                  "Value": "53L"
                 }
               }
             }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Bold'', wf_segoe-ui_bold, helvetica, arial, sans-serif'"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 1,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 1
+                }
+              }
+            ]
           }
         }
       ]
@@ -455,7 +413,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "19D"
+                  "Value": "18D"
                 }
               }
             },
@@ -470,6 +428,20 @@
               "expr": {
                 "Literal": {
                   "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "alignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'center'"
                 }
               }
             }
@@ -528,6 +500,39 @@
               "expr": {
                 "Literal": {
                   "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "left": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            },
+            "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
                 }
               }
             }
