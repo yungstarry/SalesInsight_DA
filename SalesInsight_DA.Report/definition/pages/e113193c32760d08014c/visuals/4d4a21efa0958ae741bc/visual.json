@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "4d4a21efa0958ae741bc",
   "position": {
-    "x": 60.934978286023416,
-    "y": 478.247253820608,
+    "x": 1531.2964984689124,
+    "y": 101.84103315137799,
     "z": 27000,
-    "height": 57.2419492989917,
-    "width": 72.01406524711858,
+    "height": 40.491013180668354,
+    "width": 71.77952336573027,
     "tabOrder": 16000
   },
   "visual": {
@@ -52,7 +52,7 @@
             "textAngle": {
               "expr": {
                 "Literal": {
-                  "Value": "11L"
+                  "Value": "0L"
                 }
               }
             }
