@@ -2,12 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.5.0/schema.json",
   "name": "758d282683b90da443a8",
   "position": {
-    "x": 236.42448633764033,
-    "y": 113.16886813401229,
+    "x": 0,
+    "y": 0,
     "z": 42000,
-    "height": 849.88133309454088,
-    "width": 273.29803007837319,
-    "tabOrder": 43000
+    "height": 850.31127679403551,
+    "width": 226.38157369191853
   },
   "visualGroup": {
     "displayName": "sidebar",
