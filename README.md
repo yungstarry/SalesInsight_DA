@@ -1,6 +1,6 @@
 # Sales Insight & Performance Dashboard
 
-[Click Here to Check it out on Power Bi Service]()
+[Click Here to Check it out on Power Bi Service](https://app.powerbi.com/view?r=eyJrIjoiNzViNjI1MGMtZGY1MC00NTFmLWIyZjEtODUyOWExNDIyNzk3IiwidCI6IjhmNzg3ODg0LTA2MTctNDEzMi05MzFhLTQyYjljM2ViNjM3YiJ9)
 ---
 
 ## 1. Title
